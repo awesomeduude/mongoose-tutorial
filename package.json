@@ -7,8 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/awesomeduude/sports-weather.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/awesomeduude/sports-weather/issues"
+  },
+  "homepage": "https://github.com/awesomeduude/sports-weather",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
