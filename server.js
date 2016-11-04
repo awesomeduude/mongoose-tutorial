@@ -1,23 +1,24 @@
-var express = require('express');
-var path = require('path');
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
+var express = require('express')
+var path = require('path')
+var mongoose = require('mongoose')
+var bodyParser = require('body-parser')
 
 
-var app = express();
+var app = express()
 
-var schema = new mongoose.Schema({ name: 'string', size: 'string' });
-var Tank = mongoose.model('Tank', schema);
 
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
+var schema = new mongoose.Schema({ name: 'string', size: 'string' })
+var Tank = mongoose.model('Tank', schema)
+
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
 
 app.get('/', function(req,res) {
-  res.send('Welcome to the Homepage');
+  res.send('Welcome to the Homepage')
 })
 app.get('/tanks', function(req,res) {
   mongoose.model('Tank').find(function(err, tanks) {
-    res.send(tanks);
+    res.send(tanks)
   })
 })
 
@@ -50,7 +51,7 @@ app.delete('/tanks', function(req,res) {
 
 
 app.listen(process.env.PORT || 3000, function() {
-  console.log('**********Listening on Port 3000**********');
-});
+  console.log('**********Listening on Port 3000**********')
+})
 
 mongoose.connect('mongodb://127.0.0.1/myDb')
